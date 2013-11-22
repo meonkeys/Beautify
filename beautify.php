@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 /**
  * Beautify
@@ -24,11 +25,11 @@
  * Change the paths below to the actual paths on your OS.
  */
 // Download latest version from http://michelf.ca/projects/php-markdown/
-require_once "PHP-Markdown-Extra-1.2.5/markdown.php";
+require_once __DIR__ . "/PHP-Markdown-Extra-1.2.5/markdown.php";
 // Download latest version from http://sourceforge.net/projects/geshi/files/
-require_once "geshi/geshi.php";
+require_once __DIR__ . "/geshi/geshi.php";
 // Download latest version from http://daringfireball.net/projects/smartypants/
-require_once "SmartyPants/smartypants-typographer.php";
+require_once __DIR__ . "/SmartyPants/smartypants-typographer.php";
 
 // Full path to dot program and error log
 if (substr(strtoupper(PHP_OS),0,3) == "WIN") { // Windows
@@ -114,4 +115,4 @@ function beautify($s) {
 }
 
 
-
+print beautify(file_get_contents($argv[1]));
